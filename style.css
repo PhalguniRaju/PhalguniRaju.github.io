@@ -1,0 +1,48 @@
+/* Modern dark-themed portfolio with profile pic, hover effects */
+:root{
+  --bg:#0f1720;--card:#0b1220;--muted:#9aa3af;--text:#e6eef6;--accent:#6ee7b7;
+  --glass: rgba(255,255,255,0.03);--max-width:1100px;--radius:12px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui;line-height:1.5;color:var(--text);background:linear-gradient(180deg,var(--bg),#09121a 140%)}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 1rem}
+
+/* Header */
+.site-header{backdrop-filter:blur(6px);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.75rem 0}
+.brand{font-weight:600;font-size:1.05rem}
+.site-nav{display:flex;gap:1rem;align-items:center}
+.site-nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:0.95rem;padding:0.45rem 0.6rem;border-radius:8px}
+.site-nav a:hover{color:var(--text);background:var(--glass)}
+.nav-toggle{display:none;background:transparent;color:var(--text);border:0;font-size:1.15rem;cursor:pointer}
+
+/* Hero */
+.hero{padding:4rem 0;text-align:center}
+.profile-pic{width:150px;height:150px;border-radius:50%;border:3px solid var(--accent);margin-bottom:1rem}
+.hero-name{color:white;font-size:2rem;margin:0 0 1rem;font-weight:700}
+.hero-buttons{display:flex;justify-content:center;gap:1rem;margin-top:1rem}
+.btn{display:inline-block;padding:0.55rem 0.9rem;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);text-decoration:none;border-radius:8px;font-weight:600}
+.btn-secondary{border-color:var(--accent);color:var(--accent)}
+.btn:hover{transform:scale(1.05);transition:0.2s}
+
+/* Sections */
+.section{padding:3rem 0;border-top:1px solid rgba(255,255,255,0.02)}
+.section h2{margin:0 0 1rem;font-size:1.25rem}
+.muted{color:var(--muted)}
+
+/* Cards Grid */
+.edu-grid,.skills-grid,.cert-grid,.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.edu-card,.skill-card,.cert-card,.project-card{background:var(--card);padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.02);transition:0.3s, transform 0.3s}
+.edu-card:hover,.skill-card:hover,.cert-card:hover,.project-card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 6px 15px rgba(0,0,0,0.5);background:linear-gradient(135deg,#0b1220,#111c2c)}
+.meta{color:var(--muted);font-size:0.85rem;margin-top:0.25rem}
+
+/* Contact */
+.contact .social-links{display:flex;flex-direction:column;gap:0.5rem;margin-top:0.75rem}
+.contact .social-links a{color:var(--accent);text-decoration:none;font-weight:600;display:flex;align-items:center;gap:0.3rem}
+.contact .social-links a:hover{text-decoration:underline}
+
+/* Footer */
+.site-footer{padding:1.25rem 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+/* Responsive */
+@media(max-width:800px){.site-nav{display:none}.nav-toggle{display:inline-flex}}
